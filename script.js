@@ -1,106 +1,78 @@
-
-/* Brian Machoka - Portfolio - FINAL 2026 */
-'use strict';
-
-const nav = document.getElementById('nav');
-const burger = document.getElementById('burger');
-const menu = document.getElementById('menu');
-const overlay = document.getElementById('navOverlay');
-const progress = document.getElementById('progress');
-const yearEl = document.getElementById('year');
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const overlay = $('#navOverlay');
+const nav = $('#nav'), burger = $('#burger'), menu = $('#menu'), bar = $('#progress');
 const links = [...menu.querySelectorAll('a')];
-const typedEl = document.getElementById('typed');
 
-/* ===== MENU - FIXED SOLID BLACK ===== */
-const setMenu = (open) => {
-  menu.classList.toggle('open', open);
-  overlay?.classList.toggle('open', open);
-  nav.classList.toggle('menu-open', open);
-  burger.setAttribute('aria-expanded', String(open));
-  burger.setAttribute('aria-label', open? 'Close menu' : 'Open menu');
-  document.body.style.overflow = open? 'hidden' : '';
-  if (open) nav.classList.add('scrolled');
-};
-
+// Mobile menu
+const setMenu = open => { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); if (overlay) overlay.classList.toggle('show', open); };
+if (overlay) overlay.addEventListener('click', () => setMenu(false));
 burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
 links.forEach(a => a.addEventListener('click', () => setMenu(false)));
-overlay?.addEventListener('click', () => setMenu(false));
+addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
-document.addEventListener('click', (e) => {
-  if (menu.classList.contains('open') &&!menu.contains(e.target) &&!burger.contains(e.target) &&!overlay?.contains(e.target)) {
-    setMenu(false);
-  }
-});
-
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && menu.classList.contains('open')) setMenu(false);
-});
-
-window.addEventListener('resize', () => {
-  if (window.innerWidth >= 900 && menu.classList.contains('open')) setMenu(false);
-}, { passive: true });
-
-/* ===== NAV SCROLL + PROGRESS BAR ===== */
+// Nav background + scroll progress bar
 const onScroll = () => {
-  const y = window.scrollY;
-  if (!nav.classList.contains('menu-open')) {
-    nav.classList.toggle('scrolled', y > 20);
-  }
-  if (progress) {
-    const h = document.documentElement.scrollHeight - window.innerHeight;
-    progress.style.width = h > 0? (y / h * 100) + '%' : '0%';
-  }
+  nav.classList.toggle('scrolled', scrollY > 20);
+  const max = document.documentElement.scrollHeight - innerHeight;
+  bar.style.transform = 'scaleX(' + (max > 0 ? scrollY / max : 0) + ')';
 };
 onScroll();
-window.addEventListener('scroll', onScroll, { passive: true });
+addEventListener('scroll', onScroll, { passive: true });
+$('#year').textContent = new Date().getFullYear();
 
-/* ===== YEAR ===== */
-if (yearEl) yearEl.textContent = new Date().getFullYear();
+// Number count-up
+const count = el => {
+  const end = +el.dataset.count, suf = el.dataset.suffix || '';
+  if (reduce) { el.textContent = end + suf; return; }
+  const t0 = performance.now(), dur = 1400;
+  (function f(t) {
+    const p = Math.min((t - t0) / dur, 1);
+    el.textContent = Math.round(end * (1 - Math.pow(1 - p, 3))) + suf;
+    if (p < 1) requestAnimationFrame(f);
+  })(t0);
+};
 
-/* ===== REVEAL ON SCROLL ===== */
-const reveal = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('in');
-      reveal.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+// Staggered reveal on scroll
+$$('.grid,.skills,.stats,.cgrid,.certs').forEach(g =>
+  [...g.children].forEach((c, i) => { c.style.transitionDelay = (i % 4) * 90 + 'ms'; }));
+const io = new IntersectionObserver(entries => entries.forEach(e => {
+  if (!e.isIntersecting) return;
+  const t = e.target;
+  t.classList.add('in');
+  io.unobserve(t);
+  const c = t.querySelector('[data-count]');
+  if (c) count(c);
+  // hand control back to the element's own hover transitions
+  setTimeout(() => { t.style.transitionDelay = ''; t.classList.remove('reveal', 'in'); }, 1200);
+}), { threshold: .12 });
+$$('.reveal').forEach(el => io.observe(el));
 
-document.querySelectorAll('.reveal').forEach(el => reveal.observe(el));
+// Cursor spotlight on cards
+$$('.card,.sk').forEach(el => el.addEventListener('pointermove', e => {
+  const r = el.getBoundingClientRect();
+  el.style.setProperty('--mx', e.clientX - r.left + 'px');
+  el.style.setProperty('--my', e.clientY - r.top + 'px');
+}));
 
-/* ===== ACTIVE LINK SPY ===== */
-const spy = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      const id = entry.target.id;
-      links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + id));
-    }
-  });
-}, { rootMargin: '-45% 0px -50% 0px' });
+// Highlight the nav link of the section in view
+const spy = new IntersectionObserver(entries => entries.forEach(e => {
+  if (e.isIntersecting) links.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + e.target.id));
+}), { rootMargin: '-45% 0px -50% 0px' });
+$$('main section[id]').forEach(s => spy.observe(s));
 
-document.querySelectorAll('main section[id]').forEach(s => spy.observe(s));
-
-/* ===== TYPING EFFECT ===== */
-if (typedEl &&!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+// Typing effect for the role line
+const el = $('#typed');
+if (el && !reduce) {
   const roles = ['Software Developer', 'IT Systems Specialist', 'Web Applications Engineer'];
   let r = 0, i = 0, del = false;
-
   (function tick() {
     const w = roles[r];
-    typedEl.textContent = w.slice(0, i);
-
-    if (!del && i === w.length) {
-      del = true;
-      return setTimeout(tick, 1800);
-    }
-    if (del && i === 0) {
-      del = false;
-      r = (r + 1) % roles.length;
-    }
-    i += del? -1 : 1;
-    setTimeout(tick, del? 35 : 75);
+    el.textContent = w.slice(0, i);
+    if (!del && i === w.length) { del = true; return setTimeout(tick, 1800); }
+    if (del && i === 0) { del = false; r = (r + 1) % roles.length; }
+    i += del ? -1 : 1;
+    setTimeout(tick, del ? 35 : 75);
   })();
-} else if (typedEl) {
-  typedEl.textContent = 'Software Developer';
 }
