@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,22 +20,17 @@
 <meta name="twitter:title" content="Brian Machoka | Software Developer">
 <meta name="twitter:image" content="https://images.unsplash.com/photo-1587620962725-abab7fe55159?auto=format&fit=crop&w=1200&h=630&q=70">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Brian Machoka Mwamba","jobTitle":"Software Developer","address":{"@type":"PostalAddress","addressLocality":"Nakuru","addressCountry":"KE"},"email":"machokabrian0@gmail.com"}</script>
+<!-- Analytics: turn on Netlify Analytics in your dashboard, or add a Plausible script tag here -->
 <script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
-
-<div id="progress"></div>
-
+<div class="progress" id="progress"></div>
 <header class="nav" id="nav">
   <div class="wrap bar">
     <a href="#home" class="logo"><span class="mark">BM</span>Brian Machoka</a>
-    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
+    <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
     <nav id="menu">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact" class="pill">Hire me</a>
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#contact" class="pill">Hire me</a>
     </nav>
   </div>
   <div class="nav-overlay" id="navOverlay"></div>
@@ -45,7 +39,8 @@
 <main>
 <section id="home" class="hero">
   <div class="wrap hero-in">
-    <span class="badge"><i></i>Available for full-time, contract & remote roles</span>
+    <div class="hero-copy">
+    <span class="badge"><i></i>Available for full-time, contract &amp; remote roles</span>
     <h1>I'm <span class="grad">Brian Machoka</span></h1>
     <h2 class="role"><span id="typed">Software Developer</span></h2>
     <p class="intro">I design, build and deploy scalable, user-centered web applications, and keep the servers and networks behind them running.</p>
@@ -59,18 +54,29 @@
       <a href="https://twitter.com/yourusername" aria-label="Twitter" target="_blank" rel="noopener"><i class="fa-brands fa-twitter"></i></a>
       <a href="https://instagram.com/yourusername" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
     </div>
+    <aside class="hero-card" aria-hidden="true">
+      <div class="hc-bar"><i></i><i></i><i></i><span>brian.js</span></div>
+<pre><code><span class="k">const</span> brian = {
+  <span class="p">role</span>: <span class="s">'Software Developer'</span>,
+  <span class="p">stack</span>: [<span class="s">'PHP'</span>, <span class="s">'Python'</span>, <span class="s">'JS'</span>],
+  <span class="p">based</span>: <span class="s">'Nakuru, KE'</span>,
+  <span class="p">openToWork</span>: <span class="k">true</span>
+};</code></pre>
+    </aside>
   </div>
 </section>
+
+<div class="ticker" aria-hidden="true"><div class="track"><span>PHP</span><span>Laravel</span><span>Python</span><span>JavaScript</span><span>MySQL</span><span>Bootstrap</span><span>Git &amp; GitHub</span><span>Docker</span><span>Linux</span><span>Networking</span><span>REST APIs</span><span>PHP</span><span>Laravel</span><span>Python</span><span>JavaScript</span><span>MySQL</span><span>Bootstrap</span><span>Git &amp; GitHub</span><span>Docker</span><span>Linux</span><span>Networking</span><span>REST APIs</span></div></div>
 
 <section id="about" class="sec">
   <div class="wrap">
     <p class="eyebrow reveal">About me</p>
     <h2 class="h2 reveal">Code that ships, <span class="grad">systems that stay up</span></h2>
-    <p class="lead reveal">I'm a results-driven developer who builds production-ready web applications from scratch. My IT support experience at the Supreme Court of Kenya, plus three portfolio projects including a live e-commerce and inventory system, means I'm comfortable writing clean code, configuring servers and diagnosing network issues.</p>
+    <p class="lead reveal">I'm a results-driven developer who builds production-ready web applications from scratch. My IT support experience at the Supreme Court of Kenya, plus five portfolio projects including a live e-commerce and inventory system, means I'm comfortable writing clean code, configuring servers and diagnosing network issues.</p>
     <div class="stats">
-      <div class="stat reveal"><b>3+</b><span>Live deployed projects</span></div>
-      <div class="stat reveal"><b>100+</b><span>Users supported daily</span></div>
-      <div class="stat reveal"><b>15+</b><span>Workstations deployed</span></div>
+      <div class="stat reveal"><b data-count="4" data-suffix="+">4+</b><span>Live deployed projects</span></div>
+      <div class="stat reveal"><b data-count="100" data-suffix="+">100+</b><span>Users supported daily</span></div>
+      <div class="stat reveal"><b data-count="15" data-suffix="+">15+</b><span>Workstations deployed</span></div>
       <div class="stat reveal"><b>Full-Stack</b><span>PHP · Python · MySQL · JS</span></div>
     </div>
   </div>
@@ -82,9 +88,9 @@
     <h2 class="h2 reveal">Tools I <span class="grad">work with</span></h2>
     <div class="skills">
       <div class="sk reveal"><h3><i class="fa-solid fa-code"></i> Languages</h3><p><span>PHP</span><span>Python</span><span>JavaScript (ES6+)</span><span>HTML5</span><span>CSS3</span></p></div>
-      <div class="sk reveal"><h3><i class="fa-solid fa-layer-group"></i> Frameworks & Data</h3><p><span>Laravel</span><span>Django</span><span>Bootstrap 5</span><span>MySQL</span><span>SQLite</span><span>REST APIs</span></p></div>
-      <div class="sk reveal"><h3><i class="fa-solid fa-rocket"></i> Tools & Deployment</h3><p><span>Git & GitHub</span><span>Docker (basic)</span><span>cPanel</span><span>Netlify</span><span>XAMPP</span><span>phpMyAdmin</span></p></div>
-      <div class="sk reveal"><h3><i class="fa-solid fa-network-wired"></i> IT & Networking</h3><p><span>Windows 10/11</span><span>Ubuntu / Linux CLI</span><span>TCP/IP · LAN/WAN</span><span>Wireshark</span><span>Hardware repair</span></p></div>
+      <div class="sk reveal"><h3><i class="fa-solid fa-layer-group"></i> Frameworks &amp; Data</h3><p><span>Laravel</span><span>Bootstrap 5</span><span>MySQL</span><span>SQLite</span><span>REST APIs</span></p></div>
+      <div class="sk reveal"><h3><i class="fa-solid fa-rocket"></i> Tools &amp; Deployment</h3><p><span>Git &amp; GitHub</span><span>Docker (basic)</span><span>cPanel</span><span>Netlify</span><span>XAMPP</span><span>phpMyAdmin</span></p></div>
+      <div class="sk reveal"><h3><i class="fa-solid fa-network-wired"></i> IT &amp; Networking</h3><p><span>Windows 10/11</span><span>Ubuntu / Linux CLI</span><span>TCP/IP · LAN/WAN</span><span>Wireshark</span><span>Hardware repair</span></p></div>
     </div>
   </div>
 </section>
@@ -103,20 +109,37 @@
         <a class="more" href="https://pembahardware.com" target="_blank" rel="noopener">View live <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
       </article>
       <article class="card reveal">
-        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div></div>
+        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div><img src="https://image.thum.io/get/width/900/crop/560/https://personal-developer-1-portfolio.vercel.app/" alt="Screenshot of my developer portfolio" loading="lazy" onerror="this.remove()"></div>
         <span class="num">02</span>
-        <h3>Online Employee Selection & Hiring System</h3>
+        <h3>Personal Developer Portfolio</h3>
+        <p>A responsive, mobile-first portfolio showcasing my projects, skills and experience, deployed live with continuous deployment.</p>
+        <p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></p>
+        <div class="mlinks"><a class="more" href="https://personal-developer-1-portfolio.vercel.app/" target="_blank" rel="noopener">View live <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="more" href="https://github.com/machokabrian/Personal-Developer-Portfolio" target="_blank" rel="noopener">View code <i class="fa-brands fa-github"></i></a></div>
+      </article>
+      <article class="card reveal">
+        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div><img src="https://image.thum.io/get/width/900/crop/560/https://mwamba-logistics.vercel.app" alt="Screenshot of the Mwamba Logistics website" loading="lazy" onerror="this.remove()"></div>
+        <span class="num">03</span>
+        <h3>Mwamba Logistics</h3>
+        <p>A responsive logistics company website built with HTML, CSS and JavaScript, deployed live on Vercel.</p>
+        <p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></p>
+        <div class="mlinks"><a class="more" href="https://mwamba-logistics.vercel.app" target="_blank" rel="noopener">View live <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="more" href="https://github.com/machokabrian/mwamba-logistics" target="_blank" rel="noopener">View code <i class="fa-brands fa-github"></i></a></div>
+      </article>
+      <article class="card reveal">
+        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div><img src="https://image.thum.io/get/width/900/crop/560/https://real-estate-azure-one-44.vercel.app" alt="Screenshot of the Real Estate website" loading="lazy" onerror="this.remove()"></div>
+        <span class="num">04</span>
+        <h3>Real Estate Website</h3>
+        <p>A responsive real estate website built as a front-end project and deployed live on Vercel.</p>
+        <p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Vercel</span></p>
+        <div class="mlinks"><a class="more" href="https://real-estate-azure-one-44.vercel.app" target="_blank" rel="noopener">View live <i class="fa-solid fa-arrow-up-right-from-square"></i></a><a class="more" href="https://github.com/machokabrian/Real-Estate-" target="_blank" rel="noopener">View code <i class="fa-brands fa-github"></i></a></div>
+      </article>
+      <article class="card reveal">
+        <!-- To use a real screenshot, add: <img src="URL" alt="..." loading="lazy"> inside .shot -->
+        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div></div>
+        <span class="num">05</span>
+        <h3>Online Employee Selection &amp; Hiring System</h3>
         <p>A full-cycle recruitment platform: job posting, online applications, automated scoring, admin shortlisting and interview scheduling. The rule-based scoring engine cuts HR review time for every hiring round.</p>
         <p class="tags"><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap</span></p>
         <a class="more" href="https://github.com/machokabrian/Online-Employee-Selection-and-Hiring-System" target="_blank" rel="noopener">View code <i class="fa-brands fa-github"></i></a>
-      </article>
-      <article class="card reveal">
-        <div class="shot"><div class="mock"><b></b><i></i><i></i><i></i></div></div>
-        <span class="num">03</span>
-        <h3>Personal Developer Portfolio</h3>
-        <p>A responsive, mobile-first portfolio showcasing my projects, skills and experience, deployed on Netlify with continuous deployment.</p>
-        <p class="tags"><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Netlify</span></p>
-        <a class="more" href="https://github.com/machokabrian/Personal-Developer-Portfolio" target="_blank" rel="noopener">View code <i class="fa-brands fa-github"></i></a>
       </article>
     </div>
     <div class="case reveal">
@@ -134,7 +157,7 @@
 <section id="experience" class="sec alt">
   <div class="wrap">
     <p class="eyebrow reveal">Experience</p>
-    <h2 class="h2 reveal">Where I've <span class="grad">worked & learned</span></h2>
+    <h2 class="h2 reveal">Where I've <span class="grad">worked &amp; learned</span></h2>
     <div class="tl">
       <article class="item reveal">
         <time>Sep 2023 – Dec 2023</time>
@@ -158,7 +181,7 @@
       </article>
       <article class="item reveal">
         <time>Ongoing</time>
-        <h3>Certifications & learning</h3>
+        <h3>Certifications &amp; learning</h3>
         <ul>
           <li>Cisco CyberOps Associate: security monitoring, threat analysis and incident response.</li>
           <li>Self-study: advanced Laravel, Docker containerisation and AWS Cloud Practitioner.</li>
@@ -169,12 +192,13 @@
     <div class="certs">
       <div class="cert reveal"><i class="fa-solid fa-shield-halved"></i><span><b>Cisco CyberOps Associate</b><small>Cisco Networking Academy</small></span><em class="done">Completed</em></div>
       <div class="cert reveal"><i class="fa-brands fa-aws"></i><span><b>AWS Cloud Practitioner</b><small>Exam preparation</small></span><em>In progress</em></div>
-      <div class="cert reveal"><i class="fa-brands fa-docker"></i><span><b>Docker & Advanced Laravel</b><small>Self-study</small></span><em>In progress</em></div>
+      <div class="cert reveal"><i class="fa-brands fa-docker"></i><span><b>Docker &amp; Advanced Laravel</b><small>Self-study</small></span><em>In progress</em></div>
     </div>
     <a class="btn primary reveal" href="Brian_Machoka_CV.pdf" download><i class="fa-solid fa-download"></i> Download full CV</a>
   </div>
 </section>
 
+<!-- Testimonials: hidden until you add real quotes (with permission). Edit the text, then delete the word "hidden" below. -->
 <section id="testimonials" class="sec alt" hidden>
   <div class="wrap">
     <p class="eyebrow reveal">Testimonials</p>
@@ -202,7 +226,7 @@
 </main>
 
 <a class="wafab" href="https://wa.me/254716635052?text=Hi%20Brian%2C%20I%20saw%20your%20portfolio%20and%20would%20like%20to%20talk." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-<footer><div class="wrap">© <span id="year">2025</span> Brian Machoka · Built with ❤️ and 💻</div></footer>
+<footer><div class="wrap">&copy; <span id="year">2025</span> Brian Machoka · Built with ❤️ and 💻</div></footer>
 <script src="script.js"></script>
 </body>
 </html>
