@@ -1,4 +1,4 @@
- Personal Developer Portfolio
+# Personal Developer Portfolio
 
 My personal portfolio website, showcasing my projects, skills and experience as a software developer.
 
@@ -28,4 +28,3 @@ My personal portfolio website, showcasing my projects, skills and experience as 
 ## Author
 **Brian Machoka**, Software Developer, Nakuru, Kenya
 [GitHub](https://github.com/machokabrian) · machokabrian0@gmail.com
-per-Portfolio
