@@ -9,7 +9,15 @@ const links = [...menu.querySelectorAll('a')];
 const setMenu = open => { menu.classList.toggle('open', open); burger.setAttribute('aria-expanded', open); if (overlay) overlay.classList.toggle('show', open); };
 if (overlay) overlay.addEventListener('click', () => setMenu(false));
 burger.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
-links.forEach(a => a.addEventListener('click', () => setMenu(false)));
+links.forEach(a => a.addEventListener('click', e => {
+  const target = $(a.getAttribute('href'));
+  if (target) {
+    e.preventDefault();
+    history.pushState(null, '', a.hash);
+    (target.querySelector('.eyebrow') || target).scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }
+  setMenu(false);
+}));
 addEventListener('keydown', e => { if (e.key === 'Escape') setMenu(false); });
 
 // Nav background + scroll progress bar
@@ -21,6 +29,34 @@ const onScroll = () => {
 onScroll();
 addEventListener('scroll', onScroll, { passive: true });
 $('#year').textContent = new Date().getFullYear();
+
+// In-page live project previews
+const projectDialog = $('#projectDialog');
+const projectFrame = projectDialog.querySelector('.project-dialog-frame');
+const projectDialogTitle = $('#projectDialogTitle');
+const projectDialogLink = projectDialog.querySelector('.project-dialog-link');
+$$('.project-preview').forEach(link => link.addEventListener('click', e => {
+  if (typeof projectDialog.showModal !== 'function' || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  e.preventDefault();
+  const title = link.closest('.card').querySelector('h3').textContent;
+  projectDialogTitle.textContent = title;
+  projectFrame.title = title + ' preview';
+  projectFrame.src = link.href;
+  projectDialogLink.href = link.href;
+  projectDialog.showModal();
+}));
+projectDialog.querySelector('.project-dialog-close').addEventListener('click', () => projectDialog.close());
+projectDialog.addEventListener('cancel', e => {
+  e.preventDefault();
+  projectDialog.close();
+});
+addEventListener('keydown', e => {
+  if (e.key === 'Escape' && projectDialog.open) projectDialog.close();
+});
+projectDialog.addEventListener('click', e => {
+  if (e.target === projectDialog) projectDialog.close();
+});
+projectDialog.addEventListener('close', () => { projectFrame.src = 'about:blank'; });
 
 // Number count-up
 const count = el => {

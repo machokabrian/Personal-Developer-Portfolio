@@ -26,5 +26,5 @@ My personal portfolio website, showcasing my projects, skills and experience as 
 
 
 ## Author
-**Brian Machoka**, Software Developer, Nakuru, Kenya
+**Brian Machoka**, Software Developer, Nairobi, Kenya
 [GitHub](https://github.com/machokabrian) · machokabrian0@gmail.com
