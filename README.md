@@ -23,7 +23,7 @@ My personal portfolio website, showcasing my projects, skills and experience as 
 ## Run it locally
 1. Clone the repo: `git clone https://github.com/machokabrian/Personal-Developer-Portfolio.git`
 2. Open `index.html` in your browser.
-3. The contact form needs a PHP server (for example XAMPP) to send email.
+
 
 ## Author
 **Brian Machoka**, Software Developer, Nakuru, Kenya
