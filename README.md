@@ -1,4 +1,4 @@
-# Personal-Develo# Personal Developer Portfolio
+ Personal Developer Portfolio
 
 My personal portfolio website, showcasing my projects, skills and experience as a software developer.
 
