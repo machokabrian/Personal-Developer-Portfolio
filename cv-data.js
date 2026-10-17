@@ -8,6 +8,7 @@ window.CV_DATA = {
   email: 'machokabrian0@gmail.com',
   github: 'https://github.com/machokabrian',
   portfolio: 'https://machokamwamba.co.ke',
+  portfolioLabel: 'machokamwamba.co.ke',
   website: 'https://pembahardware.com',
   websiteLabel: 'pembahardware.com',
 
