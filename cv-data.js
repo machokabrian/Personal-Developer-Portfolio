@@ -9,16 +9,14 @@ window.CV_DATA = {
   github: 'https://github.com/machokabrian',
   portfolio: 'https://machokamwamba.co.ke',
   portfolioLabel: 'machokamwamba.co.ke',
-  website: 'https://pembahardware.com',
-  websiteLabel: 'pembahardware.com',
 
   stats: [
-    ['5+', 'Live deployed projects'],
+    ['4+', 'Live deployed projects'],
     ['4 months', 'Supreme Court IT attachment'],
     ['Full-Stack', 'PHP · Python · MySQL · JS']
   ],
 
-  summary: 'Results-driven Software Developer with demonstrated ability to design, build and deploy production-ready web applications from scratch. Brings hands-on IT support experience from the Supreme Court of Kenya alongside six portfolio projects, five of them live, including a fully operational e-commerce and inventory management system. Proficient across the full development stack: PHP (Laravel), Python, MySQL and JavaScript. Equally comfortable configuring server environments, diagnosing network issues and writing clean, maintainable code. Committed to delivering solutions that are reliable, scalable and user-focused.',
+  summary: 'Results-driven Software Developer with demonstrated ability to design, build and deploy production-ready web applications from scratch. Brings hands-on IT support experience from the Supreme Court of Kenya alongside six portfolio projects, four of them live, including an inventory and sales management system built for a real client. Proficient across the full development stack: PHP (Laravel), Python, MySQL and JavaScript. Equally comfortable configuring server environments, diagnosing network issues and writing clean, maintainable code. Committed to delivering solutions that are reliable, scalable and user-focused.',
 
   competencies: [
     'Full-Stack Web Development', 'Database Design', 'IT Helpdesk Support',
@@ -40,30 +38,31 @@ window.CV_DATA = {
   }],
 
   projects: [
-    { title: '1. PembaHardware.com: Hardware Shop Management System',
-      links: [{ label: 'View live', url: 'https://pembahardware.com' }],
-      bullets: [
-        'Sole developer: architected the database schema, built all backend logic and designed a fully responsive Bootstrap front end.',
-        'Key features: product catalogue, real-time stock tracking, sales recording, customer management and a secure admin dashboard.',
-        'Business impact: enables the hardware shop to manage hundreds of SKUs digitally, replacing manual paper-based stock tracking.'
-      ],
-      stack: 'PHP · MySQL · Bootstrap 5 · JavaScript · live on HostPinnacle (cPanel shared hosting)' },
-    { title: '2. Personal Developer Portfolio',
+    { title: '1. Personal Developer Portfolio',
       links: [{ label: 'View live', url: 'https://machokamwamba.co.ke' }, { label: 'GitHub', url: 'https://github.com/machokabrian/Personal-Developer-Portfolio' }],
       bullets: ['Responsive, mobile-first portfolio showcasing projects, technical skills and experience, deployed with continuous deployment.'],
       stack: 'HTML5 · CSS3 · vanilla JavaScript' },
-    { title: '3. Mwamba Logistics',
-      links: [{ label: 'View live', url: 'https://mwamba-logistics.vercel.app' }, { label: 'GitHub', url: 'https://github.com/machokabrian/mwamba-logistics' }],
-      bullets: ['Built a responsive, mobile-friendly logistics company website, deployed live on Vercel.', 'Source code managed with Git and published on GitHub.'],
+    { title: '2. Lemways Nest: Real Estate Website',
+      links: [{ label: 'View live', url: 'https://www.lemwaysnest.co.ke' }, { label: 'GitHub', url: 'https://github.com/machokabrian/Real-Estate-' }],
+      bullets: ['Built a responsive website for a Nairobi property company, with filterable property listings, listing details with WhatsApp and call-an-agent options, and a contact section.', 'Source code managed with Git and published on GitHub.'],
       stack: 'HTML5 · CSS3 · JavaScript' },
-    { title: '4. Real Estate Website',
-      links: [{ label: 'View live', url: 'https://real-estate-azure-one-44.vercel.app' }, { label: 'GitHub', url: 'https://github.com/machokabrian/Real-Estate-' }],
-      bullets: ['Built a responsive, mobile-friendly real estate website as a front-end project, deployed live on Vercel.', 'Source code managed with Git and published on GitHub.'],
-      stack: 'HTML5 · CSS3 · JavaScript' },
-    { title: '5. Atelier Lune: Modern Salon Website',
+    { title: '3. Atelier Lune: Modern Salon Website',
       links: [{ label: 'View live', url: 'https://modern-salon-atelier-lune.vercel.app' }, { label: 'GitHub', url: 'https://github.com/machokabrian/modern-salon-atelier-lune' }],
       bullets: ['Built a modern, responsive website for a beauty salon with a clean, elegant design, deployed live on Vercel.', 'Source code managed with Git and published on GitHub.'],
       stack: 'HTML5 · CSS3 · JavaScript' },
+    { title: '4. Mwamba Logistics',
+      links: [{ label: 'View live', url: 'https://mwamba-logistics.vercel.app' }, { label: 'GitHub', url: 'https://github.com/machokabrian/mwamba-logistics' }],
+      bullets: ['Built a responsive, mobile-friendly logistics company website, deployed live on Vercel.', 'Source code managed with Git and published on GitHub.'],
+      stack: 'HTML5 · CSS3 · JavaScript' },
+    { title: '5. PembaHardware.com: Hardware Shop Management System',
+      links: [],
+      bullets: [
+        'Sole developer: architected the database schema, built all backend logic and designed a fully responsive Bootstrap front end.',
+        'Key features: product catalogue, real-time stock tracking, sales recording, customer management and a secure admin dashboard.',
+        'Business impact: enables the hardware shop to manage hundreds of SKUs digitally, replacing manual paper-based stock tracking.',
+        'Delivered to the client and deployed on cPanel shared hosting (HostPinnacle). Demo available on request.'
+      ],
+      stack: 'PHP · MySQL · Bootstrap 5 · JavaScript' },
     { title: '6. Online Employee Selection & Hiring System',
       links: [{ label: 'GitHub', url: 'https://github.com/machokabrian/Online-Employee-Selection-and-Hiring-System' }],
       bullets: [
