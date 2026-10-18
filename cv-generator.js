@@ -61,7 +61,7 @@
     doc.text(nm, (W - (doc.getTextWidth(nm) + cs * (nm.length - 1))) / 2, y + 34, { charSpace: cs });
     font('normal', 10.3); ink([230, 238, 251]); doc.text(D.title, W / 2, y + 54, { align: 'center' });
     var segs = [{ t: D.location }, { t: D.phone }, { t: D.email, u: 'mailto:' + D.email }, { t: 'GitHub', u: D.github },
-                { t: D.portfolioLabel || 'Portfolio', u: D.portfolio }, { t: D.websiteLabel, u: D.website }];
+                { t: D.portfolioLabel || 'Portfolio', u: D.portfolio }];
     font('normal', 8.2);
     var sep = '  ·  ', sepW = doc.getTextWidth(sep), total = sepW * (segs.length - 1);
     segs.forEach(function (s) { s.w = doc.getTextWidth(s.t); total += s.w; });
