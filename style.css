@@ -221,11 +221,19 @@ a.ccard:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 1
 /* ---------- Responsive ---------- */
 @media(max-width:639px){
   .badge{font-size:.7rem;padding:.36rem .75rem}
-  .hero{padding-top:4.5rem}
+  .hero{min-height:100vh;min-height:100svh;padding-top:3.8rem}
   .hero-bg{background-position:68% center}
-  .hero h1{margin:1rem 0 .5rem}
-  .intro{margin-top:.8rem}
-  .cta{margin:1.3rem auto}
+  .hero-in{padding-bottom:1rem}
+  .badge{margin-top:.4rem}
+  .hero h1{font-size:clamp(1.9rem,8.6vw,2.5rem);margin:.8rem 0 .3rem}
+  .role{font-size:clamp(1.05rem,4.6vw,1.3rem)}
+  .intro{margin-top:.6rem;font-size:.9rem;line-height:1.55}
+  .cta{flex-direction:row;gap:.6rem;max-width:none;margin:1.1rem 0 1rem}
+  .cta .btn{flex:1;padding:.75rem .5rem;font-size:.85rem;border-radius:12px;gap:.45rem}
+  .social{gap:.7rem}
+  .social a{width:42px;height:42px;font-size:1rem}
+  .ticker{padding:.8rem 0}
+  .track span{font-size:.95rem}
   .project-dialog{padding:.7rem;border-radius:18px}
   .project-dialog-link span{display:none}
 }
