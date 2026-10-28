@@ -16,7 +16,7 @@ window.CV_DATA = {
     ['Full-Stack', 'PHP · Python · MySQL · JS']
   ],
 
-  summary: 'Results-driven Software Developer with demonstrated ability to design, build and deploy production-ready web applications from scratch. Brings hands-on IT support experience from the Supreme Court of Kenya alongside six portfolio projects, four of them live, including an inventory and sales management system built for a real client. Proficient across the full development stack: PHP (Laravel), Python, MySQL and JavaScript. Equally comfortable configuring server environments, diagnosing network issues and writing clean, maintainable code. Committed to delivering solutions that are reliable, scalable and user-focused.',
+  summary: 'Results-driven Software Developer with demonstrated ability to design, build and deploy production-ready web applications from scratch. Brings hands-on IT support experience from the Supreme Court of Kenya alongside six portfolio projects, four of them live, including an inventory and sales management system built for a real client. Proficient across the full development stack: PHP (Laravel), Python, MySQL and JavaScript (including Node.js). Equally comfortable configuring server environments, diagnosing network issues and writing clean, maintainable code. Committed to delivering solutions that are reliable, scalable and user-focused.',
 
   competencies: [
     'Full-Stack Web Development', 'Database Design', 'IT Helpdesk Support',
@@ -44,8 +44,12 @@ window.CV_DATA = {
       stack: 'HTML5 · CSS3 · vanilla JavaScript' },
     { title: '2. Lemways Nest: Real Estate Website',
       links: [{ label: 'View live', url: 'https://www.lemwaysnest.co.ke' }, { label: 'GitHub', url: 'https://github.com/machokabrian/Real-Estate-' }],
-      bullets: ['Built a responsive website for a Nairobi property company, with filterable property listings, listing details with WhatsApp and call-an-agent options, and a contact section.', 'Source code managed with Git and published on GitHub.'],
-      stack: 'HTML5 · CSS3 · JavaScript' },
+      bullets: [
+        'Built a real estate platform for a Nairobi property company: filterable listings and a dedicated page per property with a gallery, live map, agent WhatsApp and call buttons, and a mortgage or move-in estimate.',
+        'Developed a password-protected admin dashboard using Vercel serverless functions (Node.js) and Cloudinary storage, so the team publishes listings and photos without code or a database.',
+        'Generated search-friendly property pages and a sitemap at each deploy; source code managed with Git on GitHub.'
+      ],
+      stack: 'HTML5 · CSS3 · JavaScript · Node.js · Vercel · Cloudinary' },
     { title: '3. Atelier Lune: Modern Salon Website',
       links: [{ label: 'View live', url: 'https://modern-salon-atelier-lune.vercel.app' }, { label: 'GitHub', url: 'https://github.com/machokabrian/modern-salon-atelier-lune' }],
       bullets: ['Built a modern, responsive website for a beauty salon with a clean, elegant design, deployed live on Vercel.', 'Source code managed with Git and published on GitHub.'],
@@ -73,12 +77,12 @@ window.CV_DATA = {
   ],
 
   skills: [
-    ['Languages', 'PHP (Laravel) · Python · JavaScript (ES6+) · HTML5 · CSS3'],
+    ['Languages', 'PHP (Laravel) · Python · JavaScript (ES6+, Node.js) · HTML5 · CSS3'],
     ['Databases', 'MySQL · SQLite: schema design, query optimisation, indexing, stored procedures'],
     ['Frameworks', 'Laravel · Bootstrap 5'],
     ['APIs & Integration', 'RESTful API design & consumption · JSON · form-to-email handlers'],
     ['DevOps & Tools', 'Git & GitHub · Docker (basic) · XAMPP · VS Code · cPanel · phpMyAdmin'],
-    ['Web Deployment', 'cPanel shared hosting (HostPinnacle) · Netlify · Vercel · domain & DNS configuration'],
+    ['Web Deployment', 'cPanel shared hosting (HostPinnacle) · Netlify · Vercel (serverless functions) · Cloudinary · domain & DNS configuration'],
     ['IT Support', 'Hardware diagnosis & repair · Windows 10/11 · Ubuntu/Linux CLI · workstation setup'],
     ['Networking', 'TCP/IP · LAN/WAN · Wireshark · ping/traceroute · basic router/switch configuration'],
     ['Soft Skills', 'Problem-solving · Self-directed learning · Attention to detail · Team collaboration']
