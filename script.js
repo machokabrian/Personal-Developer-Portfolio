@@ -35,16 +35,32 @@ const projectDialog = $('#projectDialog');
 const projectFrame = projectDialog.querySelector('.project-dialog-frame');
 const projectDialogTitle = $('#projectDialogTitle');
 const projectDialogLink = projectDialog.querySelector('.project-dialog-link');
-$$('.project-preview').forEach(link => link.addEventListener('click', e => {
-  if (typeof projectDialog.showModal !== 'function' || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
-  e.preventDefault();
-  const title = link.closest('.card').querySelector('h3').textContent;
-  projectDialogTitle.textContent = title;
-  projectFrame.title = title + ' preview';
-  projectFrame.src = link.href;
-  projectDialogLink.href = link.href;
-  projectDialog.showModal();
-}));
+
+// Sites that must open in a new tab instead of the pop-up preview
+// (empty = every project opens as a pop-up. If a site shows "refused to connect",
+// add its host here, e.g. ['example.com'], and it will open in a new tab instead).
+const NEW_TAB_HOSTS = [];
+const opensInNewTab = link => {
+  try { return NEW_TAB_HOSTS.includes(new URL(link.href).hostname); } catch (err) { return false; }
+};
+
+$$('.project-preview').forEach(link => {
+  if (opensInNewTab(link)) {
+    link.target = '_blank';
+    link.rel = 'noopener';
+    return; // normal link: opens the real site in a new tab
+  }
+  link.addEventListener('click', e => {
+    if (typeof projectDialog.showModal !== 'function' || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    const title = link.closest('.card').querySelector('h3').textContent;
+    projectDialogTitle.textContent = title;
+    projectFrame.title = title + ' preview';
+    projectFrame.src = link.href;
+    projectDialogLink.href = link.href;
+    projectDialog.showModal();
+  });
+});
 projectDialog.querySelector('.project-dialog-close').addEventListener('click', () => projectDialog.close());
 projectDialog.addEventListener('cancel', e => {
   e.preventDefault();
